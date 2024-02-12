@@ -1,0 +1,63 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows7.0</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <StartupObject>AutoPilotController.App</StartupObject>
+    <ApplicationIcon>Img\AutoPilotController.ico</ApplicationIcon>
+
+    <Configurations>Debug;Release</Configurations>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Authors>Bert Laverman</Authors>
+    <Copyright>Copyright 2021-2024 by B. Laverman - All rights reserved</Copyright>
+    <PackageProjectUrl>https://github.com/CsSimConnect</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/CsSimConnect/CsSimConnectUI</RepositoryUrl>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageIcon>Img\AutoPilotController.png</PackageIcon>
+    <PackageIconUrl />
+    <Version>0.1.0</Version>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="Img\AutoPilotController.ico" Pack="true" PackagePath="" />
+    <None Include="Img\AutoPilotController.png" Pack="true" PackagePath="" />
+
+    <ApplicationDefinition Include="src\App.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CsSimConnect" Version="0.1.1" />
+    <PackageReference Include="CsSimConnectUIComponents" Version="0.1.2" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
+    <PackageReference Include="NSwag.Core" Version="14.0.3" />
+    <PackageReference Include="Rakis.Logging" Version="0.12.0" />
+    <PackageReference Include="Rakis.Settings" Version="0.11.0" />
+    <PackageReference Include="System.Reactive" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Img\AutoPilotController.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
